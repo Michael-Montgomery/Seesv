@@ -1,0 +1,21 @@
+.header {
+    height: 70px;
+    background-image: linear-gradient(to right, #8EB9FC, #358BEA);
+}
+
+.header h1 {
+    color: white;
+    font-size: 24px;
+    line-height: 70px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.header h1 span {
+    font-family: 'Playball', cursive;
+    font-size: 1.6em;
+    background: linear-gradient(red, blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+* {
+  transition: all 0.3s ease;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +40,145 @@
     transform: rotate(360deg);
   }
 }
+
+h2 {
+  color: #358BEA;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+h3 {
+  /* color: #358BEA; */
+  text-align: center;
+  font-size: 2em;
+  background-color: #d8d8d8;
+  width: fit-content;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.intro {
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro p {
+  font-size: 1.7em;
+  line-height: 1.5;
+  margin: 20px auto;
+  max-width: 600px;
+  color: #358BEA;
+  text-indent: 20px;
+}
+
+input[type="file"] {
+  margin: 20px auto;
+  text-align: center;
+  width: 200px;
+  display: inline-block;
+  
+}
+
+::file-selector-button, .export-btn, .single-record-modal-wrapper button {
+  background-color: #358BEA;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 10px;
+}
+
+::file-selector-button:hover, .export-btn:hover, .single-record-modal-wrapper button:hover {
+  background-color: #2a6cb0;
+}
+
+.export-btn {
+  margin: 20px auto;
+  display: inline;
+  float: right;
+}
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.csv-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+th:hover {
+  background-color:#358BEA;
+  color: white;
+}
+
+.columns {
+  list-style-type: none;
+  padding: 0;
+}
+
+.columns li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+details {
+  margin: 20px auto;
+  width: 80%;
+  text-align: left;
+  background-color: #358BEA;
+  color: white;
+  height: fit-content;
+  line-height: 50px;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+details summary {
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  padding: 4px;
+  margin-left: 8px;
+  width: 200px;
+  outline: none;
+  border: none;
+}
+
+.ReactModal__Content {
+  /* padding: 0; */
+}
+
+.single-record-modal-wrapper {
+  width: 40vw;
+}
+
+.single-record-modal-wrapper button:last-child {
+  margin-left: 10px;
+  float: right;
+}
+
+
+
+
+

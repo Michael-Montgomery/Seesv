@@ -1,0 +1,22 @@
+.footer {
+    height: 70px;
+    background-image: linear-gradient(to right, #8EB9FC, #358BEA);
+    line-height: 35px;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding-right: 400px;
+}
+
+.footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    line-height: 35px;
+}
+
+.footer nav p {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
