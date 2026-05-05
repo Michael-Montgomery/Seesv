@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/supercsv/static/css/main.35f64023.css",
+    "main.js": "/supercsv/static/js/main.7fa7ac69.js",
+    "static/js/453.53daa62a.chunk.js": "/supercsv/static/js/453.53daa62a.chunk.js",
+    "index.html": "/supercsv/index.html",
+    "main.35f64023.css.map": "/supercsv/static/css/main.35f64023.css.map",
+    "main.7fa7ac69.js.map": "/supercsv/static/js/main.7fa7ac69.js.map",
+    "453.53daa62a.chunk.js.map": "/supercsv/static/js/453.53daa62a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35f64023.css",
+    "static/js/main.7fa7ac69.js"
+  ]
+}
