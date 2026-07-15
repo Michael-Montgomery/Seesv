@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# SuperCSV
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SuperCSV is a browser-based CSV viewer and exporter. Data is processed client-side.
 
-## Available Scripts
+## Run Locally
 
-In the project directory, you can run:
+1. Install dependencies:
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Create your local env file:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+cp .env.example .env
+```
 
-### `npm test`
+3. Start dev server:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm start
+```
 
-### `npm run build`
+## Google AdSense Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app now includes reusable ad slots and an AdSense script hook. To enable ads:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Open `.env`.
+2. Set `REACT_APP_ENABLE_ADS=true`.
+3. Set `REACT_APP_ADSENSE_CLIENT_ID` to your publisher ID (for example, `ca-pub-1234567890123456`).
+4. Set each slot ID:
+	- `REACT_APP_ADSENSE_TOP_BANNER_SLOT`
+	- `REACT_APP_ADSENSE_BOTTOM_BANNER_SLOT`
+	- `REACT_APP_ADSENSE_LEFT_RAIL_SLOT`
+	- `REACT_APP_ADSENSE_RIGHT_RAIL_SLOT`
+5. Restart the dev server after changing `.env` values.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Notes:
 
-### `npm run eject`
+- AdSense often does not show live ads on localhost or for unapproved ad units.
+- When ads are disabled or config is missing, placeholder cards are shown so layout is easy to tune.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Build
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm run build
+```

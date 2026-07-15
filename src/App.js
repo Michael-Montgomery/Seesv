@@ -6,7 +6,10 @@ import Papa from "papaparse";
 import Footer from './components/footer/footer';
 import html2pdf from "html2pdf.js";
 import Modal from 'react-modal';
+import AdSlot from './components/adslot/adslot';
 
+// Set app element for accessibility
+Modal.setAppElement('#root');
 
 const customStyles = {
   content: {
@@ -19,12 +22,7 @@ const customStyles = {
   },
 };
 
-
-
-
-
 function App() {
-
 
   const [showIntro, setShowIntro] = useState(true);
   const [csvData, setCsvData] = useState(null);
@@ -50,6 +48,7 @@ function App() {
       })
       .save();
   };
+
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
 
@@ -67,7 +66,6 @@ function App() {
     });
   };
 
-
   const exportSingleRecordPDF = () => {
     const element = document.getElementById("single-record-pdf-content");
 
@@ -81,7 +79,6 @@ function App() {
       })
       .save();
   };
-  
 
   const handleSort = (column) => {
     setSortConfig(prev => {
@@ -124,17 +121,12 @@ function App() {
     return sorted;
   }, [csvData, sortConfig]);
 
-
-  let subtitle;
-  // const [modalIsOpen, setIsOpen] = useState(false);
-
   function openModal() {
     setIsOpen(true);
   }
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    // subtitle.style.color = '#f00';
   }
 
   function closeModal() {
@@ -147,16 +139,28 @@ function App() {
     openModal();
   };
 
-
-
   return (
     <>
       <Header />
 
+      <main className='app-shell'>
+        <aside className='ad-rail ad-rail-left'>
+          <AdSlot slot={process.env.REACT_APP_ADSENSE_LEFT_RAIL_SLOT} className='ad-card' />
+        </aside>
+
+        <section className='app-main-content'>
+          <div className='ad-banner ad-banner-top'>
+            <AdSlot
+              slot={process.env.REACT_APP_ADSENSE_TOP_BANNER_SLOT}
+              className='ad-card'
+              format='horizontal'
+            />
+          </div>
+
       {
         showIntro && <div className='intro'>
-          <h2>Welcome to SuperCSV!</h2>
-          <p>SuperCSV is a 100% free, easy-to-use CSV viewer, editor and exporter. SuperCSV does not and will never send your data anywhere. To get started, click the button below to upload a CSV file. </p>
+          <h2>Welcome to SeeSV!</h2>
+          <p>SeeSV is a 100% free, easy-to-use CSV viewer and exporter. SeeSV does not and will never send your data anywhere. To get started, click the button below to upload a CSV file. </p>
 
         </div>
 
@@ -176,7 +180,7 @@ function App() {
           <details>
             <summary>columns</summary>
             <ul className='columns'>
-              {csvData && Object.keys(csvData[0]).map((header) => (
+              {csvData && csvData.length > 0 && Object.keys(csvData[0]).map((header) => (
                 <li key={header}>
                   <input
                     type="checkbox"
@@ -211,11 +215,10 @@ function App() {
       <div id="pdf-content">
         <h3 style={{ visibility: docTitle.length > 1 ? 'visible' : 'hidden' }}>{docTitle}</h3>
 
-
         <table className='csv-table'>
           <thead>
             <tr>
-              {csvData &&
+              {csvData && csvData.length > 0 &&
                 Object.keys(csvData[0])
                   .filter(header => visibleColumns.includes(header))
                   .map(header => <th
@@ -241,18 +244,24 @@ function App() {
               </tr>
             ))}
           </tbody>
-
-
-
         </table>
       </div>
 
+          <div className='ad-banner ad-banner-bottom'>
+            <AdSlot
+              slot={process.env.REACT_APP_ADSENSE_BOTTOM_BANNER_SLOT}
+              className='ad-card'
+              format='horizontal'
+            />
+          </div>
+        </section>
 
+        <aside className='ad-rail ad-rail-right'>
+          <AdSlot slot={process.env.REACT_APP_ADSENSE_RIGHT_RAIL_SLOT} className='ad-card' />
+        </aside>
+      </main>
 
-      <Footer />
-
-
-
+      {/* <Footer /> */}
 
       <Modal
         isOpen={modalIsOpen}
@@ -276,7 +285,6 @@ function App() {
           <button onClick={exportSingleRecordPDF}>Export to PDF</button>
         </div>
       </Modal>
-
 
     </>
   );

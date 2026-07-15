@@ -2,10 +2,8 @@
     height: 70px;
     background-image: linear-gradient(to right, #8EB9FC, #358BEA);
     line-height: 35px;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    padding-right: 400px;
+    width: 100%;
+    padding-right: 0;
 }
 
 .footer nav {
