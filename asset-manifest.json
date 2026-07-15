@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/supercsv/static/css/main.936c8ea8.css",
-    "main.js": "/supercsv/static/js/main.0cc794f9.js",
-    "static/js/453.53daa62a.chunk.js": "/supercsv/static/js/453.53daa62a.chunk.js",
-    "index.html": "/supercsv/index.html",
-    "main.936c8ea8.css.map": "/supercsv/static/css/main.936c8ea8.css.map",
-    "main.0cc794f9.js.map": "/supercsv/static/js/main.0cc794f9.js.map",
-    "453.53daa62a.chunk.js.map": "/supercsv/static/js/453.53daa62a.chunk.js.map"
+    "main.css": "/seesv/static/css/main.936c8ea8.css",
+    "main.js": "/seesv/static/js/main.97445f64.js",
+    "static/js/453.53daa62a.chunk.js": "/seesv/static/js/453.53daa62a.chunk.js",
+    "index.html": "/seesv/index.html",
+    "main.936c8ea8.css.map": "/seesv/static/css/main.936c8ea8.css.map",
+    "main.97445f64.js.map": "/seesv/static/js/main.97445f64.js.map",
+    "453.53daa62a.chunk.js.map": "/seesv/static/js/453.53daa62a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.936c8ea8.css",
-    "static/js/main.0cc794f9.js"
+    "static/js/main.97445f64.js"
   ]
 }
